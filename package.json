@@ -1,10 +1,10 @@
 {
-  "name": "api",
+  "name": "arrimo-pro-challenge",
   "version": "0.0.1",
   "description": "",
-  "author": "",
+  "author": "Emma",
   "private": true,
-  "license": "UNLICENSED",
+  "license": "MIT",
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "nest build",
@@ -91,7 +91,8 @@
     "testEnvironment": "node"
   },
   "engines": {
-    "node": "16.13.1"
+    "node": "16.13.1",
+    "npm": "8.1.2"
   }
 
 }

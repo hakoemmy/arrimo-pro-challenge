@@ -12,13 +12,14 @@ import { AllExceptionsFilter } from './core/all-exceptions.filter';
     ConfigModule.forRoot({ isGlobal: true }),
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: process.env.POSTGRES_HOST,
-      port: parseInt(<string>process.env.POSTGRES_PORT),
-      username: process.env.POSTGRES_USER,
-      password: process.env.POSTGRES_PASSWORD,
-      database: process.env.POSTGRES_DATABASE,
+      url: process.env.DATABASE_URL,
       autoLoadEntities: true,
+      ssl:
+      process.env.NODE_ENV === 'production'
+      ? { rejectUnauthorized: false }
+      : false,
       synchronize: true, // shouldn't be used in production - may lose data
+
     }),
     SubscriptionModule,
   ],
